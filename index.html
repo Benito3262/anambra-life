@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0b6b3a">
+<meta name="description" content="Anambra Life: a free browser life game set in Onitsha, Nnewi, Awka and more. Trade, serve your Oga, build a business, enter politics, climb Anambra Forbes.">
+<title>Anambra Life</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="game"></canvas>
+  <div id="hud" class="hidden">
+    <div class="hud-row">
+      <div class="cash" id="hudCash">₦0</div>
+      <div class="lvl" id="hudLvl"><span id="hudLvlName">Broke</span><div class="bar"><i id="hudLvlBar"></i></div></div>
+    </div>
+    <div class="hud-row small">
+      <span id="hudTown">Onitsha</span><span id="hudTime">Day 1 · 7:00</span><span id="hudLight">💡</span>
+      <span class="meter" title="Energy">⚡<b><i id="hudEnergy"></i></b></span><span class="meter" title="Happiness">😊<b><i id="hudHappy"></i></b></span>
+    </div>
+  </div>
+  <div id="liveTag" class="hidden">● OFFLINE</div>
+  <div id="ticker" class="hidden"></div>
+  <div id="controls" class="hidden">
+    <div id="dpad"><button data-d="up">▲</button><button data-d="left">◀</button><button data-d="right">▶</button><button data-d="down">▼</button></div>
+    <div id="actionWrap"><div id="prompt"></div><button id="btnA">A</button></div>
+  </div>
+  <nav id="bar" class="hidden">
+    <button data-p="phone">📱<span>Phone</span><em id="phoneBadge"></em></button>
+    <button data-p="chat">💬<span>Chat</span></button>
+    <button data-p="map">🗺️<span>Map</span></button>
+    <button data-p="bag">🎒<span>Bag</span></button>
+    <button data-p="forbes">🏆<span>Forbes</span></button>
+    <button data-p="more">☰<span>More</span></button>
+  </nav>
+  <div id="panel" class="hidden"><div class="sheet"><header><h2 id="panelTitle"></h2><button id="panelClose">✕</button></header><div id="panelBody"></div></div></div>
+  <div id="modal" class="hidden"><div class="card" id="modalCard"></div></div>
+  <div id="toasts"></div>
+  <div id="levelup" class="hidden"></div>
+  <div id="create" class="hidden"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="js/data.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/world.js"></script>
+<script src="js/game.js"></script>
+<script src="js/net.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/map.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
